@@ -10,4 +10,15 @@ ALTER TABLE person
     RENAME COLUMN age TO user_age;
 ALTER TABLE person
     alter COLUMN user_name type VARCHAR(50);
+ALTER TABLE person
+    ALTER COLUMN user_age SET NOT NULL;
+ALTER TABLE person
+    ALTER COLUMN user_age DROP NOT NULL;
+ALTER TABLE person
+    ADD CONSTRAINT unique_person_user_age UNIQUE(user_age);
+ALTER TABLE person
+    DROP CONSTRAINT unique_person_user_age;
+
+TRUNCATE TABLE person;
+DROP Table person;
 
